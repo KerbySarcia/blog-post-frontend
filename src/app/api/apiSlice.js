@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { setCredentials } from "../../features/auth/authSlice";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: process.env.API_URL,
+  baseUrl: "https://blogpost-api-9rp8.onrender.com",
   credentials: "include",
   prepareHeaders: (header, { getState }) => {
     const token = getState().auth.token;

@@ -8,6 +8,7 @@ import PersistLogin from "./features/auth/PersistLogin";
 import CreateAccount from "./features/users/CreateAccount";
 
 function App() {
+  console.log(process.env.API_URL);
   return (
     <div className=" ">
       <Routes>
