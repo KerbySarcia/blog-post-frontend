@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Layout from "./components/Layout";
+import { Routes, Route } from "react-router-dom";
+import Home from "./features/posts/Home";
+import Login from "./features/auth/Login";
+import ProtectedRoutes from "./features/auth/ProtectedRoutes";
+import PersistLogin from "./features/auth/PersistLogin";
+import CreateAccount from "./features/users/CreateAccount";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className=" ">
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="login" element={<Login />} />
+          <Route path="create" element={<CreateAccount />} />
+          <Route element={<PersistLogin />}>
+            <Route element={<ProtectedRoutes />}>
+              <Route index element={<Home />} />
+            </Route>
+          </Route>
+        </Route>
+      </Routes>
     </div>
   );
 }
