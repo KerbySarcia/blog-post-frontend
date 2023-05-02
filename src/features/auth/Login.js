@@ -57,6 +57,11 @@ const Login = () => {
           </p>
         )}
         <form action="" className="space-y-5 p-2">
+          <div className="space-y-0">
+            <h1>Demo Account</h1>
+            <h1>Username: admin123</h1>
+            <h1>Password: admin123</h1>
+          </div>
           <div className="flex flex-col">
             <label htmlFor="username">Username</label>
             <input
